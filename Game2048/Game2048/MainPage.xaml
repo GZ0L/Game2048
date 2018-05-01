@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Game2048.MainPage"  >
+
+
+    <ContentView SizeChanged="OnContainerSizeChanged"  BackgroundColor="#455A64" >
+        <StackLayout x:Name="MyStackLayout" Margin="10" Spacing="10">
+
+            <Frame x:Name="MenuFrame" OutlineColor="Gray" CornerRadius="5" Padding="0" BackgroundColor="AliceBlue" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <StackLayout>
+                    <Label MinimumHeightRequest="30" Text="2048" FontFamily="Tahoma" Margin="5" FontSize="35" HorizontalTextAlignment="Start" VerticalTextAlignment="Start" TextColor="#607D8B"/>
+                    <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand">
+                        <Picker x:Name="getSizeBoard" Title="select size" SelectedIndexChanged="sizeBoard_Click" TextColor="#607D8B" HorizontalOptions="Start" Margin="5">
+                            <Picker.Items>
+                                <x:String>3 x 3</x:String>
+                                <x:String>4 x 4</x:String>
+                                <x:String>5 x 5</x:String>
+                            </Picker.Items>
+                        </Picker>
+                        <Label MinimumHeightRequest="30" Text="Score: 00.000" FontFamily="Tahoma" FontSize="25" Margin="5" HorizontalTextAlignment="End" VerticalTextAlignment="End" TextColor="#607D8B" HorizontalOptions="EndAndExpand"  />
+                    </StackLayout>
+                    <Button Text="New Game" Clicked="Btn_NewGame_Click" FontFamily="Tahoma" FontSize="25" TextColor="#607D8B" BackgroundColor="Transparent" BorderRadius="5" BorderWidth="1" BorderColor="#607D8B" />
+
+                </StackLayout>
+            </Frame>
+
+            <Frame x:Name="MyFrame" OutlineColor="Gray" CornerRadius="5" Padding="0" BackgroundColor="AliceBlue"  >
+                <Grid x:Name="MyGrid" Padding="5">
+                    <Label BackgroundColor="AliceBlue" Margin="10"/>
+                </Grid>
+            </Frame>
+
+        </StackLayout>
+    </ContentView>
+
+
+</ContentPage>
